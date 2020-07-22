@@ -25,21 +25,31 @@ function App() {
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Get list of assignments
-   const renderAssignments = studentEvaluationData.map((student) => {
-      return student.assignment.map((assignment) => {
-         return assignment.name;
-      });
-   });
+   // const renderAssignments = studentEvaluationData.map((student) => {
+   //    return student.assignment.map((assignment) => {
+   //       return assignment.name;
+   //    });
+   // });
    // .join(" ");
 
-   const copyAllAssignments = [];
-
-   const makeOneAssignmentArray = renderAssignments.forEach(function (assignment) {
-      copyAllAssignments.push(assignment);
+   const renderAssignments = studentEvaluationData.map((student) => {
+      return student.assignment;
    });
 
-   console.log(renderAssignments);
-   console.log(makeOneAssignmentArray);
+   console.log("weergave van renderAssignment", renderAssignments);
+
+   const array = [
+      { name: "Joe", age: 17 },
+      { name: "Bob", age: 17 },
+      { name: "Tom", age: 35 },
+   ];
+
+   const distinctAges = [...new Set(array.map((x) => x.age))];
+   console.log(distinctAges);
+
+   const distinctAssignments = [...new Set(renderAssignments.map((item) => item.name))];
+
+   console.log(distinctAssignments);
 
    return (
       <div className="app-container">
@@ -47,7 +57,7 @@ function App() {
          <ul>{getStudentList ? getStudentList : null}</ul>
          <h2>Assignments</h2>
          <p></p>
-         <ul>{renderAssignments ? renderAssignments : null}</ul>
+         {/* <ul>{renderAssignments ? renderAssignments : null}</ul> */}
       </div>
    );
 }
