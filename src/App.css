@@ -20,6 +20,10 @@ a:visited {
    color: rgb(255, 255, 255);
 }
 
+a {
+   text-decoration: none;
+}
+
 .nav-bar-links {
    width: 40%;
    display: flex;

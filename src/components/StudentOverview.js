@@ -7,6 +7,7 @@ import StudentGridContainer from "./StudentGridContainer";
 function StudentOverview({ getStudentList, getAssignments }) {
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // DRY function for accessing enjoyment rating for student x
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 
    const getEnjoymentRatings = (student, assignment) => {
       return studentEvaluationData
