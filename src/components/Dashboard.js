@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 
 import studentEvaluationData from "../data/student-evaluation-data";
+import Chart from "./Chart";
 
 function Dashboard({ getStudentList, getAssignments }) {
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -48,6 +49,7 @@ function Dashboard({ getStudentList, getAssignments }) {
             Welcome to the dashboard section. The graph below displays the average ratings of all Winc students. Head
             over the student overview for the individual difficulty and enjoyment ratings given by the students.
          </p>
+         <Chart />
       </div>
    );
 }
