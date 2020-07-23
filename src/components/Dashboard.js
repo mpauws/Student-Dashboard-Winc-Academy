@@ -6,6 +6,7 @@ import studentEvaluationData from "../data/student-evaluation-data";
 function Dashboard({ getStudentList, getAssignments }) {
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // DRY function for calculating average difficultyRating
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    const getAverageDifficultyRating = (assignment) => {
       const getTotalDifficultyRating = studentEvaluationData
          .filter((item) => {
@@ -22,6 +23,7 @@ function Dashboard({ getStudentList, getAssignments }) {
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // DRY function for calculating average difficultyRating
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    const getAverageEnjoymentRating = (assignment) => {
       const getTotalEnjoymentRating = studentEvaluationData
          .filter((item) => {
@@ -38,7 +40,7 @@ function Dashboard({ getStudentList, getAssignments }) {
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Return
-
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    return (
       <div className="component-container">
          <h2>Dashboard</h2>

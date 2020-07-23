@@ -15,7 +15,7 @@ import "./App.css";
 function App() {
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Get list of students
-
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    const getStudentList = [...new Set(studentEvaluationData.map((x) => x.student))].sort((student1, student2) => {
       if (student1 > student2) {
          return 1;
@@ -31,6 +31,7 @@ function App() {
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Get list of assignments
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    const getAssignments = [...new Set(studentEvaluationData.map((x) => x.assignment))].sort(
       (assignment1, assignment2) => {
          if (assignment1 > assignment2) {
@@ -49,7 +50,7 @@ function App() {
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Return
-
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    return (
       <Router>
          <div className="app-container">
@@ -70,23 +71,12 @@ function App() {
 
 export default App;
 
-/*                <h2>Students</h2>
-            <ul>
-               {getStudentList ? getStudentList.map((student) => <li key={student}>{student}</li>) : null}
-            </ul>
-            <ul>
-               {getAssignments
-                  ? getAssignments.map((assignment) => <li key={assignment}>{assignment}</li>)
-                  : null}
-            </ul>
-}
-        
-
 // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 // Developer Functions
 
 // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 // Get enjoymentRating of Piet Paulusma of W1D2-1
+// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 /* const getEnjoyRatingPietW1D2_1 = studentEvaluationData
       .filter((item) => {
          return item.student === "Piet Paulusma";
@@ -100,6 +90,7 @@ export default App;
 */
 // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 // Get average difficultyRating of W5D4-1
+// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 /* 
    const getTotalDifficultyRatingW5D4_1 = studentEvaluationData
       .filter((item) => {
@@ -116,6 +107,7 @@ export default App;
 
 // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 // Sort studentlist
+// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 /*    const sortedStudentList = getStudentList.sort((student1, student2) => {
       if (student1 > student2) {
          return 1;
@@ -129,6 +121,7 @@ export default App;
 
 // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 // Sort assignments
+// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 /* const sortedAssignmentList = getAssignments.sort((assignment1, assignment2) => {
    if (assignment1 > assignment2) {
       return 1;

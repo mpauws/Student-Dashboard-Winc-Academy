@@ -1,8 +1,8 @@
 import React from "react";
 import "../App.css";
 
-import StudentButton from "./StudentButton";
 import studentEvaluationData from "../data/student-evaluation-data";
+import StudentGridContainer from "./StudentGridContainer";
 
 function StudentOverview({ getStudentList, getAssignments }) {
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -26,6 +26,7 @@ function StudentOverview({ getStudentList, getAssignments }) {
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // DRY function for accessing difficulty rating for student x
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 
    const getDifficultyRatings = (student, assignment) => {
       return studentEvaluationData
@@ -43,28 +44,15 @@ function StudentOverview({ getStudentList, getAssignments }) {
       getDifficultyRatings("Piet Paulusma", "W1D2-1")
    );
 
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+   // Return
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+
    return (
       <div className="component-container">
          <h2>All Students</h2>
          <p className="page-description">Select a student to display the individual gradings.</p>
-         <div className="student-grid-container">
-            {getStudentList
-               ? getStudentList.map((student) => (
-                    <StudentButton key={student} student={student} />
-
-                    /*                     <button className="student-tile" key={student}>
-                       <p>{student}</p>
-                    </button> */
-                 ))
-               : null}
-            {/* {getStudentList
-               ? getStudentList.map((student) => (
-                    <div className="student-tile" key={student}>
-                       {student}
-                    </div>
-                 ))
-               : null} */}
-         </div>
+         <StudentGridContainer getStudentList={getStudentList} />
       </div>
    );
 }
