@@ -1,22 +1,15 @@
 import React from "react";
-import studentEvaluationData from "./orientation/data-structure/student-evaluation-data";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import StudentOverview from "./components/StudentOverview";
+import Dashboard from "./components/Dashboard";
+
+// Import raw student evaluation data
+import studentEvaluationData from "./data/student-evaluation-data";
 
 import "./App.css";
 
 function App() {
-   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-   // Sort Functionality
-   /*    const sortedStudentEvaluationData = studentEvaluationData.sort((student1, student2) => {
-      if (student1.name > student2.name) {
-         return 1;
-      } else if (student1.name === student2.name) {
-         return 0;
-      } else if (student1.name < student2.name) {
-         return -1;
-      }
-      return 0;
-   }); */
-
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Get list of students
 
@@ -64,10 +57,10 @@ function App() {
          .map((assignment) => assignment.enjoymentRating);
    };
 
-   /*    console.log(
+   console.log(
       "Enjoyment Rating van Piet Paulusma voor W1D2-1 (DRY): ",
       getEnjoymentRatings("Piet Paulusma", "W1D2-1")
-   ); */
+   );
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // DRY function for accessing difficulty rating for student x
@@ -83,10 +76,10 @@ function App() {
          .map((assignment) => assignment.difficultyRating);
    };
 
-   /*    console.log(
-      "Enjoyment Rating van Piet Paulusma voor W1D2-1 (DRY): ",
+   console.log(
+      "Difficulty Rating van Piet Paulusma voor W1D2-1 (DRY): ",
       getDifficultyRatings("Piet Paulusma", "W1D2-1")
-   ); */
+   );
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // DRY function for calculating average difficultyRating
@@ -102,7 +95,7 @@ function App() {
       return getTotalDifficultyRating / getStudentList.length;
    };
 
-   // console.log('getAverageDifficultyRating', getAverageDifficultyRating("W5D4-1"));
+   console.log("getAverageDifficultyRating van W5D4-1", getAverageDifficultyRating("W5D4-1"));
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // DRY function for calculating average difficultyRating
@@ -118,21 +111,46 @@ function App() {
       return getTotalEnjoymentRating / getStudentList.length;
    };
 
-   // console.log('getAverageDifficultyRating', getAverageDifficultyRating("W5D4-1"));
+   console.log("getAverageEnjoymentRating van W5D4-1", getAverageEnjoymentRating("W5D4-1"));
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Return
 
    return (
-      <div className="app-container">
-         <h2>Students</h2>
-         <ul>{sortedStudentList ? sortedStudentList.map((student) => <li key={student}>{student}</li>) : null}</ul>
-         <ul>
-            {sortedAssignmentList
-               ? sortedAssignmentList.map((assignment) => <li key={assignment}>{assignment}</li>)
-               : null}
-         </ul>
-      </div>
+      <Router>
+         <div className="app-container">
+            <nav>
+               <ul>
+                  <li>
+                     <Link to="/">Dashboard</Link>
+                  </li>
+                  <li>
+                     <Link to="/studentoveriew">Student Overview</Link>
+                  </li>
+               </ul>
+            </nav>
+            <main>
+               <Switch>
+                  <Route path="/studentoverview">
+                     <StudentOverview />
+                  </Route>
+                  <Route path="/">
+                     <Dashboard />
+                  </Route>
+               </Switch>
+               {/*                <h2>Students</h2>
+               <ul>
+                  {sortedStudentList ? sortedStudentList.map((student) => <li key={student}>{student}</li>) : null}
+               </ul>
+               <ul>
+                  {sortedAssignmentList
+                     ? sortedAssignmentList.map((assignment) => <li key={assignment}>{assignment}</li>)
+                     : null}
+               </ul>
+ */}
+            </main>
+         </div>
+      </Router>
    );
 }
 
