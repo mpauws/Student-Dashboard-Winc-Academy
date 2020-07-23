@@ -1,0 +1,34 @@
+.app-container {
+   text-align: center;
+}
+
+nav {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   min-height: 10vh;
+   background-color: rgb(82, 100, 151);
+   color: rgb(252, 226, 205);
+   font-size: 12px;
+   font-weight: 100;
+}
+
+nav a:link,
+a:visited {
+   text-decoration: none;
+   color: rgb(252, 226, 205);
+}
+
+.nav-bar-links {
+   width: 40%;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   list-style: none;
+   padding-left: 0;
+}
+
+h5 {
+   font-size: 30px;
+   font-weight: 100;
+}

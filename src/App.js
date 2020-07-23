@@ -1,6 +1,8 @@
 import React from "react";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+import NavBar from "./components/NavBar";
 import StudentOverview from "./components/StudentOverview";
 import Dashboard from "./components/Dashboard";
 
@@ -12,7 +14,7 @@ import "./App.css";
 function App() {
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Get list of students
-
+   console.log(studentEvaluationData.map((x) => x.student));
    const getStudentList = [...new Set(studentEvaluationData.map((x) => x.student))];
    // console.log("getStudentList: ", getStudentList);
 
@@ -119,42 +121,54 @@ function App() {
    return (
       <Router>
          <div className="app-container">
-            <nav>
-               <ul>
-                  <li>
-                     <Link to="/">Dashboard</Link>
-                  </li>
-                  <li>
-                     <Link to="/studentoveriew">Student Overview</Link>
-                  </li>
-               </ul>
-            </nav>
-            <main>
-               <Switch>
-                  <Route path="/studentoverview">
-                     <StudentOverview />
-                  </Route>
-                  <Route path="/">
-                     <Dashboard />
-                  </Route>
-               </Switch>
-               {/*                <h2>Students</h2>
-               <ul>
-                  {sortedStudentList ? sortedStudentList.map((student) => <li key={student}>{student}</li>) : null}
-               </ul>
-               <ul>
-                  {sortedAssignmentList
-                     ? sortedAssignmentList.map((assignment) => <li key={assignment}>{assignment}</li>)
-                     : null}
-               </ul>
- */}
-            </main>
+            <NavBar />
+            <Switch>
+               <Route path="/" exact component={Dashboard} />
+               <Route path="/studentoverview" component={StudentOverview} />
+            </Switch>
          </div>
       </Router>
    );
 }
 
 export default App;
+
+/* return (
+   <Router>
+      <div className="app-container">
+         <nav>
+            <ul>
+               <li>
+                  <Link to="/">Dashboard</Link>
+               </li>
+               <li>
+                  <Link to="/studentoveriew">Student Overview</Link>
+               </li>
+            </ul>
+         </nav>
+         <main>
+            <Switch>
+               <Route path="/studentoverview">
+                  <StudentOverview />
+               </Route>
+               <Route path="/">
+                  <Dashboard />
+               </Route>
+            </Switch>
+            {/*                <h2>Students</h2>
+            <ul>
+               {sortedStudentList ? sortedStudentList.map((student) => <li key={student}>{student}</li>) : null}
+            </ul>
+            <ul>
+               {sortedAssignmentList
+                  ? sortedAssignmentList.map((assignment) => <li key={assignment}>{assignment}</li>)
+                  : null}
+            </ul>
+}
+         </main>
+      </div>
+   </Router>
+); */
 
 // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 // Developer Functions
