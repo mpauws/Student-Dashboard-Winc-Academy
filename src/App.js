@@ -1,14 +1,12 @@
 import React from "react";
-import studentEvaluationData from "./orientation/data-structure/data-structure";
+import studentEvaluationData from "./orientation/data-structure/student-evaluation-data";
 
 import "./App.css";
 
 function App() {
-   // const [students] = useState(studentEvaluationData);
-
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Sort Functionality
-   const sortedStudentEvaluationData = studentEvaluationData.sort((student1, student2) => {
+   /*    const sortedStudentEvaluationData = studentEvaluationData.sort((student1, student2) => {
       if (student1.name > student2.name) {
          return 1;
       } else if (student1.name === student2.name) {
@@ -17,119 +15,158 @@ function App() {
          return -1;
       }
       return 0;
-   });
+   }); */
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-   // Get ordered list of students
-   const getStudentList = sortedStudentEvaluationData.map((student) => <li key={student.id}>{student.name}</li>);
+   // Get list of students
+
+   const getStudentList = [...new Set(studentEvaluationData.map((x) => x.student))];
+   // console.log("getStudentList: ", getStudentList);
+
+   const sortedStudentList = getStudentList.sort((student1, student2) => {
+      if (student1 > student2) {
+         return 1;
+      } else if (student1 === student2) {
+         return 0;
+      } else if (student1 < student2) {
+         return -1;
+      }
+      return 0;
+   });
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Get list of assignments
-   // const renderAssignments = studentEvaluationData.map((student) => {
-   //    return student.assignment.map((assignment) => {
-   //       return assignment.name;
-   //    });
-   // });
-   // .join(" ");
 
-   const renderAssignments = studentEvaluationData.map((student) => {
-      return student.assignment;
+   const getAssignments = [...new Set(studentEvaluationData.map((x) => x.assignment))];
+
+   const sortedAssignmentList = getAssignments.sort((assignment1, assignment2) => {
+      if (assignment1 > assignment2) {
+         return 1;
+      } else if (assignment1 === assignment2) {
+         return 0;
+      } else if (assignment1 < assignment2) {
+         return -1;
+      }
+      return 0;
    });
 
-   console.log("weergave van renderAssignment", renderAssignments);
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+   // DRY function for accessing enjoyment rating for student x
 
-   const array = [
-      { name: "Joe", age: 17 },
-      { name: "Bob", age: 17 },
-      { name: "Tom", age: 35 },
-   ];
+   const getEnjoymentRatings = (student, assignment) => {
+      return studentEvaluationData
+         .filter((item) => {
+            return item.student === student;
+         })
+         .filter((student) => {
+            return student.assignment === assignment;
+         })
+         .map((assignment) => assignment.enjoymentRating);
+   };
 
-   const distinctAges = [...new Set(array.map((x) => x.age))];
-   console.log(distinctAges);
+   /*    console.log(
+      "Enjoyment Rating van Piet Paulusma voor W1D2-1 (DRY): ",
+      getEnjoymentRatings("Piet Paulusma", "W1D2-1")
+   ); */
 
-   const distinctAssignments = [...new Set(renderAssignments.map((item) => item.name))];
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+   // DRY function for accessing difficulty rating for student x
 
-   console.log(distinctAssignments);
+   const getDifficultyRatings = (student, assignment) => {
+      return studentEvaluationData
+         .filter((item) => {
+            return item.student === student;
+         })
+         .filter((student) => {
+            return student.assignment === assignment;
+         })
+         .map((assignment) => assignment.difficultyRating);
+   };
+
+   /*    console.log(
+      "Enjoyment Rating van Piet Paulusma voor W1D2-1 (DRY): ",
+      getDifficultyRatings("Piet Paulusma", "W1D2-1")
+   ); */
+
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+   // DRY function for calculating average difficultyRating
+   const getAverageDifficultyRating = (assignment) => {
+      const getTotalDifficultyRating = studentEvaluationData
+         .filter((item) => {
+            return item.assignment === assignment;
+         })
+         .map((item) => item.difficultyRating)
+         .reduce((currentTotal, grading) => {
+            return grading + currentTotal;
+         }, 0);
+      return getTotalDifficultyRating / getStudentList.length;
+   };
+
+   // console.log('getAverageDifficultyRating', getAverageDifficultyRating("W5D4-1"));
+
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+   // DRY function for calculating average difficultyRating
+   const getAverageEnjoymentRating = (assignment) => {
+      const getTotalEnjoymentRating = studentEvaluationData
+         .filter((item) => {
+            return item.assignment === assignment;
+         })
+         .map((item) => item.enjoymentRating)
+         .reduce((currentTotal, grading) => {
+            return grading + currentTotal;
+         }, 0);
+      return getTotalEnjoymentRating / getStudentList.length;
+   };
+
+   // console.log('getAverageDifficultyRating', getAverageDifficultyRating("W5D4-1"));
+
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+   // Return
 
    return (
       <div className="app-container">
          <h2>Students</h2>
-         <ul>{getStudentList ? getStudentList : null}</ul>
-         <h2>Assignments</h2>
-         <p></p>
-         {/* <ul>{renderAssignments ? renderAssignments : null}</ul> */}
+         <ul>{sortedStudentList ? sortedStudentList.map((student) => <li key={student}>{student}</li>) : null}</ul>
+         <ul>
+            {sortedAssignmentList
+               ? sortedAssignmentList.map((assignment) => <li key={assignment}>{assignment}</li>)
+               : null}
+         </ul>
       </div>
    );
 }
 
 export default App;
 
-/* 
-const data = {
-   payload: [
-      {
-         id: 1,
-         name: "Atta",
-         brands: [
-            {
-               id: 118,
-               name: "Wheatola",
-               subProducts: [
-                  {
-                     id: 858,
-                     name: "Chakki Aata",
-                     minPrice: 52,
-                     maxPrice: 56,
-                  },
-                  {
-                     id: 2,
-                     name: "Chakki Atta",
-                     minPrice: 222,
-                     maxPrice: 236,
-                  },
-               ],
-            },
-         ],
-      },
-      {
-         id: 16,
-         name: "Rice (Branded)",
-         brands: [
-            {
-               id: 25,
-               name: "CookStar",
-               subProducts: [
-                  {
-                     id: 1163,
-                     name: "Best Basmati",
-                     creditDays: 0,
-                     minPrice: 5600,
-                     maxPrice: 5600,
-                  },
-                  {
-                     id: 863,
-                     name: "Extra Long Grain Basmati",
-                     creditDays: 0,
-                     minPrice: 7800,
-                     maxPrice: 7800,
-                  },
-               ],
-            },
-         ],
-      },
-   ],
-};
+// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+// Developer Functions
 
-const renderData = data.payload
-   .map((payload) => {
-      return payload.brands
-         .map((brand) => {
-            return brand.subProducts
-               .map((subProduct) => {
-                  return `${payload.name}, ${brand.name}, ${subProduct.name}`;
-               })
-               .join("\n");
-         })
-         .join("\n");
-   })
-   .join("\n"); */
+// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+// Get enjoymentRating of Piet Paulusma of W1D2-1
+/* const getEnjoyRatingPietW1D2_1 = studentEvaluationData
+      .filter((item) => {
+         return item.student === "Piet Paulusma";
+      })
+      .filter((student) => {
+         return student.assignment === "W1D2-1";
+      })
+      .map((assignment) => assignment.enjoymentRating);
+
+   console.log("Enjoyment Rating van Piet Paulusma voor W1D2-1: ", getEnjoyRatingPietW1D2_1);
+*/
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+// Get average difficultyRating of W5D4-1
+/* 
+   const getTotalDifficultyRatingW5D4_1 = studentEvaluationData
+      .filter((item) => {
+         return item.assignment === "W5D4-1";
+      })
+      .map((item) => item.difficultyRating)
+      .reduce((currentTotal, grading) => {
+         return grading + currentTotal;
+      }, 0);
+   console.log("getTotalDifficultyRatingW5D4_1: ", getTotalDifficultyRatingW5D4_1);
+
+   const getAverageDifficultyRatingW5D4_1 = getTotalDifficultyRatingW5D4_1 / getStudentList.length;
+   console.log("getAverageDifficultyRatingW5D4_1: ", getAverageDifficultyRatingW5D4_1); */
