@@ -36,6 +36,9 @@ function Dashboard({ getStudentList, getAssignments }) {
 
    console.log("getAverageEnjoymentRating van W5D4-1", getAverageEnjoymentRating("W5D4-1"));
 
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+   // Return
+
    return (
       <div className="component-container">
          <h2>Dashboard</h2>

@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 
+import StudentButton from "./StudentButton";
 import studentEvaluationData from "../data/student-evaluation-data";
 
 function StudentOverview({ getStudentList, getAssignments }) {
@@ -49,9 +50,11 @@ function StudentOverview({ getStudentList, getAssignments }) {
          <div className="student-grid-container">
             {getStudentList
                ? getStudentList.map((student) => (
-                    <button className="student-tile" key={student}>
+                    <StudentButton key={student} student={student} />
+
+                    /*                     <button className="student-tile" key={student}>
                        <p>{student}</p>
-                    </button>
+                    </button> */
                  ))
                : null}
             {/* {getStudentList
