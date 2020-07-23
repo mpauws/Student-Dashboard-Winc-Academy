@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
    return (
-      <nav>
-         <h5>Winc Student Dashboard</h5>
+      <nav className="nav-bar">
+         <img src="winc-logo.png" alt="logo" />
+         <h5>Winc Student Dashboard </h5>
          <ul className="nav-bar-links">
             <Link to="/">
                <li>Dashboard</li>

@@ -47,8 +47,6 @@ function App() {
    // console.log("getAssignments: ", getAssignments);
    /* Output: ["W1D1-1", "W1D2-1", "W1D2-2", "W1D2-3", "W1D2-4", "W1D2-5", "W1D3-1", "W1D3-2", "W1D3-4", "W1D3-5", "W1D3-6", "W1D4-1", "W1D4-2", "W1D5-1", "W2D1-1", "W2D1-2", "W2D2-1", "W2D2-2", "W2D2-3", "W2D3-1", "W2D3-2", "W2D3-3", "W2D4-1", "W2D4-2", "W2D4-3", "W2D5-1", "W3D1-1", "W3D1-2", "W3D1-3", "W3D1-4", "W3D2-1", "W3D2-2", "W3D2-3", "W3D3-1", "W3D3-2", "W3D3-3", "W3D3-4", "W3D4-1", "W3D4-2", "W3D5-1", "W4D2-1", "W4D2-2", "W4D2-3", "W4D2-4", "W4D2-5", "W4D3-1", "W4D3-2", "W4D3-3", "W4D3-4", "W4D3-5", "W4D3-6", "W5D4-1", "W5D5-1", "W6D1-1", "W6D2-1"] */
 
-  
-
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Return
 
@@ -74,11 +72,11 @@ export default App;
 
 /*                <h2>Students</h2>
             <ul>
-               {sortedStudentList ? sortedStudentList.map((student) => <li key={student}>{student}</li>) : null}
+               {getStudentList ? getStudentList.map((student) => <li key={student}>{student}</li>) : null}
             </ul>
             <ul>
-               {sortedAssignmentList
-                  ? sortedAssignmentList.map((assignment) => <li key={assignment}>{assignment}</li>)
+               {getAssignments
+                  ? getAssignments.map((assignment) => <li key={assignment}>{assignment}</li>)
                   : null}
             </ul>
 }
