@@ -19,9 +19,6 @@ function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
       return getTotalDifficultyRating / getStudentList.length;
    };
 
-   // console.log("getAverageDifficultyRating van W5D4-1", getAverageDifficultyRating("W5D4-1"));
-   // Output: 2.8
-
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Get average enjoymentRating for assignment X
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -37,9 +34,6 @@ function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
       return getTotalEnjoymentRating / getStudentList.length;
    };
 
-   //console.log("getAverageEnjoymentRating van W5D4-1", getAverageEnjoymentRating("W5D4-1"));
-   // Output: 1.9
-
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Get array of all distinct assignments with related average difficultyRating, enjoymentRating and label
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -54,10 +48,6 @@ function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
    }));
 
    console.log("assignmentRatingAverageWithLabels: ", assignmentRatingAverageWithLabels);
-   /* Output: 
-   0: {assignment: "W1D1-1", difficultyRating: 3, enjoymentRating: 3.1, label: "Difficulty Rating: 3.0 ↵ Enjoyment Rating: 3.1"}
-1: {assignment: "W1D2-1", difficultyRating: 3, enjoymentRating: 2, label: "Difficulty Rating: 3.0 ↵ Enjoyment Rating: 2.0"} 
-*/
 
    return (
       <div className="component-container">

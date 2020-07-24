@@ -3,17 +3,13 @@ import Chart from "./Chart";
 import StudentGridContainer from "./StudentGridContainer";
 
 function StudentPage({
-   studentEvaluationData,
+   // studentEvaluationData,
    student,
    getEnjoymentRatings,
    getAssignments,
    getDifficultyRatings,
    getStudentList,
 }) {
-   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-   // Get array of all distinct assignments of student X with related average difficultyRating, enjoymentRating and label
-   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-
    const assignmentStudentRatingWithLabels = getAssignments.map((assignment) => ({
       assignment: assignment,
       difficultyRating: getDifficultyRatings(student, assignment),
@@ -24,14 +20,11 @@ function StudentPage({
    }));
 
    return (
-      <div>
+      <div className="component-container">
          <h2>{student}</h2>
-         <p className="page-description">
-            TEST CASE: De enjoyment grade van {student} voor W1D2-1 is: {getEnjoymentRatings(student, "W1D2-1")}. De
-            difficulty grade van {student} voor W1D2-1 is {getDifficultyRatings(student, "W1D2-1")}.
-         </p>
+         <p className="page-description"></p>
          <br />
-         <h3>GrafiekEnjoyment en Difficulty Gradings</h3>
+         <h3>Ratings</h3>
 
          <Chart ratingChartData={assignmentStudentRatingWithLabels} />
          <h3>Ga naar andere student</h3>

@@ -8,7 +8,6 @@ import {
    VictoryGroup,
    VictoryTooltip,
    VictoryZoomContainer,
-   // VictoryTheme,
 } from "victory";
 
 import mooiBoyTheme from "../assets/victory-mooiboy-theme";
@@ -19,10 +18,6 @@ function Chart({ ratingChartData }) {
          <VictoryChart domainPadding={15} theme={mooiBoyTheme} containerComponent={<VictoryZoomContainer />}>
             <VictoryGroup offset={20}>
                <VictoryBar
-                  /*                   animate={{
-                     duration: 1000,
-                     onLoad: { duration: 1000 },
-                  }} */
                   labelComponent={<VictoryTooltip />}
                   data={ratingChartData}
                   x="assignment"
@@ -31,10 +26,6 @@ function Chart({ ratingChartData }) {
                   tickFormat={ratingChartData.map((averages) => averages.assignment)}
                />
                <VictoryBar
-                  /*                   animate={{
-                     duration: 1000,
-                     onLoad: { duration: 1000 },
-                  }} */
                   labelComponent={<VictoryTooltip />}
                   data={ratingChartData}
                   x="assignment"
@@ -52,13 +43,10 @@ function Chart({ ratingChartData }) {
             />
             <VictoryAxis dependentAxis />
          </VictoryChart>
+
          {/* Line Chart */}
          <VictoryChart domainPadding={15} theme={mooiBoyTheme}>
             <VictoryLine
-               /*                animate={{
-                  duration: 2000,
-                  onLoad: { duration: 1000 },
-               }} */
                labelComponent={<VictoryTooltip />}
                style={{
                   data: { stroke: "#6ca8a2" },
@@ -69,10 +57,6 @@ function Chart({ ratingChartData }) {
                y="difficultyRating"
             />
             <VictoryLine
-               /*                animate={{
-                  duration: 2000,
-                  onLoad: { duration: 1000 },
-               }} */
                labelComponent={<VictoryTooltip />}
                style={{
                   data: { stroke: "#d69442" },
@@ -94,38 +78,3 @@ function Chart({ ratingChartData }) {
 }
 
 export default Chart;
-
-// Chart Experiment:
-/*
-      <div className="chart-container">
-         <VictoryChart domainPadding={20} theme={mooiBoyTheme}>
-            <VictoryAxis
-               tickValues={[1, 2, 3, 4]}
-               tickFormat={hardCodedDataAverages.map((averages) => averages.assignment)}
-            />
-            <VictoryAxis dependentAxis />
-            <VictoryBar
-               animate={{
-                  duration: 1000,
-                  onLoad: { duration: 1000 },
-               }}
-               data={hardCodedDataAverages}
-               // data accessor for x values
-               x="assignment"
-               // data accessor for y values
-               y="difficultyRating"
-            />
-            <VictoryBar
-               animate={{
-                  duration: 1000,
-                  onLoad: { duration: 1000 },
-               }}
-               data={hardCodedDataAverages}
-               // data accessor for x values
-               x="assignment"
-               // data accessor for y values
-               y="enjoymentRating"
-            />
-         </VictoryChart>
-      </div>
-   ); */
