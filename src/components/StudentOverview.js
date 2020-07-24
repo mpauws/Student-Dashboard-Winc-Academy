@@ -1,16 +1,9 @@
 import React from "react";
 import "../App.css";
 
-// import studentEvaluationData from "../data/student-evaluation-data";
 import StudentGridContainer from "./StudentGridContainer";
 
-function StudentOverview({ getStudentList, getAssignments }) {
-
-
-   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-   // Return
-   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-
+function StudentOverview({ getStudentList }) {
    return (
       <div className="component-container">
          <h2>All Students</h2>

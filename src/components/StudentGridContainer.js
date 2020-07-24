@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import StudentButton from "./StudentButton";
 
-// Experiment Go!
-
 function StudentGridContainer({ getStudentList }) {
    return (
       <div className="student-grid-container">

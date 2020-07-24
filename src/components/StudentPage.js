@@ -2,23 +2,24 @@ import React from "react";
 import Chart from "./Chart";
 import StudentGridContainer from "./StudentGridContainer";
 
-function StudentPage({ student, getEnjoymentRatings, getDifficultyRatings, getStudentList }) {
-   return (
-      <div>
-         <h2>{student}</h2>
-         <p className="page-description">
-            TEST CASE: De enjoyment grade van {student} voor W1D2-1 is: {getEnjoymentRatings(student, "W1D2-1")}. De
-            difficulty grade van {student} voor W1D2-1 is {getDifficultyRatings(student, "W1D2-1")}.
-         </p>
-         <br />
-         <h3>GrafiekEnjoyment en Difficulty Gradings</h3>
+function StudentPage({ student, getEnjoymentRatings, getAssignments, getDifficultyRatings, getStudentList }) {
+   const assignmentStudentRatingWithLabels = getAssignments.map((assignment) => ({
+      assignment: assignment,
+      difficultyRating: getDifficultyRatings(student, assignment),
+      enjoymentRating: getEnjoymentRatings(student, assignment),
+      label: `Difficulty Rating: ${getDifficultyRatings(student, assignment).toFixed(
+         1
+      )} \n Enjoyment Rating: ${getEnjoymentRatings(student, assignment).toFixed(1)}`,
+   }));
 
-         {/* <Chart
-            student={student}
-            getEnjoymentRatings={getEnjoymentRatings}
-            getDifficultyRatings={getDifficultyRatings}
-         /> */}
-         <h3>Ga naar andere student</h3>
+   return (
+      <div className="component-container">
+         <h2>{student}</h2>
+         <p className="page-description"></p>
+         <br />
+         <h3>Ratings</h3>
+         <Chart ratingChartData={assignmentStudentRatingWithLabels} />
+         <h3>Display other student</h3>
          <StudentGridContainer getStudentList={getStudentList} />
       </div>
    );

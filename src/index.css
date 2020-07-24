@@ -3,9 +3,8 @@
 body {
    margin: 0;
    font-family: "Poppins", sans-serif;
-   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-      "Droid Sans", "Helvetica Neue", sans-serif;
- */
    text-align: center;
    color: rgb(58, 58, 58);
+   background-image: url("https://wincacademy.nl/wp-content/uploads/2019/12/Winc_Achtergrond-01-5.png");
+   background-size: 80%;
 }
