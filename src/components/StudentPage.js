@@ -1,5 +1,5 @@
 import React from "react";
-// import Chart from "./Chart";
+import Chart from "./Chart";
 import StudentGridContainer from "./StudentGridContainer";
 
 function StudentPage({
@@ -18,13 +18,10 @@ function StudentPage({
       assignment: assignment,
       difficultyRating: getDifficultyRatings(student, assignment),
       enjoymentRating: getEnjoymentRatings(student, assignment),
-
-      /* label: `Difficulty Rating: ${getDifficultyRatings(student, item).toFixed(
+      label: `Difficulty Rating: ${getDifficultyRatings(student, assignment).toFixed(
          1
-      )} \n Enjoyment Rating: ${getEnjoymentRatings(student, item).toFixed(1)}`, */
+      )} \n Enjoyment Rating: ${getEnjoymentRatings(student, assignment).toFixed(1)}`,
    }));
-
-   console.log("assignmentStudentRatingWithLabels: ", assignmentStudentRatingWithLabels);
 
    return (
       <div>
@@ -36,7 +33,7 @@ function StudentPage({
          <br />
          <h3>GrafiekEnjoyment en Difficulty Gradings</h3>
 
-         {/* <Chart assignmentStudentRatingWithLabels={assignmentStudentRatingWithLabels} /> */}
+         <Chart ratingChartData={assignmentStudentRatingWithLabels} />
          <h3>Ga naar andere student</h3>
          <StudentGridContainer getStudentList={getStudentList} />
       </div>

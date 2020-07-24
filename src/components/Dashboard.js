@@ -66,24 +66,9 @@ function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
             Welcome to the dashboard section. The graph below displays the average ratings of all Winc students. Head
             over the student overview for the individual difficulty and enjoyment ratings given by the students.
          </p>
-         <Chart assignmentRatingAverageWithLabels={assignmentRatingAverageWithLabels} />
+         <Chart ratingChartData={assignmentRatingAverageWithLabels} />
       </div>
    );
 }
 
 export default Dashboard;
-
-/*    const hardCodedDataAverages = [
-      { assignment: "W1D1-2", difficultyRating: 5, enjoymentRating: 1 },
-      { assignment: "W1D1-1", difficultyRating: 1, enjoymentRating: 5 },
-      { assignment: "W1D1-3", difficultyRating: 3, enjoymentRating: 3 },
-      { assignment: "W1D2-1", difficultyRating: 5, enjoymentRating: 1 },
-      { assignment: "W1D2-2", difficultyRating: 1, enjoymentRating: 5 },
-      { assignment: "W1D3-1", difficultyRating: 3, enjoymentRating: 3 },
-      { assignment: "W1D3-1", difficultyRating: 5, enjoymentRating: 1 },
-      { assignment: "W1D3-2", difficultyRating: 1, enjoymentRating: 5 },
-      { assignment: "W1D3-3", difficultyRating: 3, enjoymentRating: 3 },
-      { assignment: "W1D3-4", difficultyRating: 5, enjoymentRating: 1 },
-      { assignment: "W1D3-5", difficultyRating: 1, enjoymentRating: 5 },
-      { assignment: "W1D3-6", difficultyRating: 3, enjoymentRating: 5 },
-   ]; */

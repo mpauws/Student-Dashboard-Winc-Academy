@@ -54,17 +54,18 @@ function App() {
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 
    const getEnjoymentRatings = (student, assignment) => {
-      return studentEvaluationData
+      const selectedRating = studentEvaluationData
          .filter((item) => {
             return item.student === student;
          })
          .filter((student) => {
             return student.assignment === assignment;
-         })
-         .map((assignment) => assignment.enjoymentRating);
+         });
+
+      return selectedRating[0].enjoymentRating;
    };
 
-   //   console.log(getEnjoymentRatings("Piet Paulusma", "W1D2-3"));
+   // console.log(getEnjoymentRatings("Piet Paulusma", "W1D2-3"));
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // DRY function for accessing difficulty rating for student x
@@ -82,7 +83,7 @@ function App() {
       return selectedRating[0].difficultyRating;
    };
 
-   console.log(getDifficultyRatings("Piet Paulusma", "W3D2-1"));
+   // console.log(getDifficultyRatings("Piet Paulusma", "W3D2-1"));
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Return
