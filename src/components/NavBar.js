@@ -6,7 +6,10 @@ import logo from "../assets/winc-logo.png";
 function NavBar() {
    return (
       <nav className="nav-bar">
-         <img className="winc-logo" src={logo} alt="winc-logo" width="100px" />
+         <Link to="/">
+            <img className="winc-logo" src={logo} alt="winc-logo" width="100px" />
+         </Link>
+
          <h5>Student Dashboard </h5>
          <ul className="nav-bar-links">
             <Link to="/">

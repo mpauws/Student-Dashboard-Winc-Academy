@@ -3361,6 +3361,4 @@ const studentEvaluationData = [
    },
 ];
 
-// START EXPERIMENT GO!
-
 export default studentEvaluationData;

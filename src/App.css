@@ -55,6 +55,7 @@ h5 {
 
 h6 {
    font-size: 14px;
+   margin-bottom: 10px;
 }
 
 .app-container {
@@ -101,10 +102,6 @@ footer {
    grid-template-columns: repeat(4, 1fr);
    grid-template-rows: repeat(3, 1fr);
    gap: 1px 1px;
-   /*    grid-template-areas:
-      ". t t t"
-      "t t t t"
-      "t t t ."; */
 }
 
 .student-tile p {
@@ -112,7 +109,6 @@ footer {
 }
 
 .student-tile {
-   /* grid-area: t; */
    font-size: 0.8em;
    display: flex;
    justify-content: center;
