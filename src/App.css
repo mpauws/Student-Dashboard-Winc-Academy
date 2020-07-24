@@ -38,18 +38,6 @@ button {
    outline: none;
 }
 
-footer {
-   display: flex;
-   /* justify-content: space-around; */
-   padding-left: 20px;
-   align-items: center;
-
-   width: 100%;
-   height: 10vh;
-   background-color: #3c7bdb;
-   color: rgb(255, 255, 255);
-}
-
 h2 {
    font-weight: 600;
    margin-top: 30px;
@@ -65,12 +53,30 @@ h5 {
    font-weight: 600;
 }
 
+h6 {
+   font-size: 14px;
+}
+
 .app-container {
    text-align: center;
+   min-height: 100vw;
+}
+
+footer {
+   position: fixed;
+   bottom: 0;
+   display: flex;
+   padding-left: 20px;
+   align-items: center;
+   width: 100%;
+   height: vh;
+   background-color: #3c7bdb;
+   color: rgb(255, 255, 255);
 }
 
 .component-container {
-   margin: 0 auto;
+   margin: 0 auto 40px auto;
+
    width: 85%;
    display: block;
    justify-content: center;
@@ -130,5 +136,10 @@ h5 {
 
 .student-tile:hover {
    background-color: rgb(86, 181, 182);
-   /* animation: 0.8s; */
+}
+
+.bar-chart,
+.line-chart,
+.student-grid-container {
+   margin-bottom: 100px;
 }

@@ -23,7 +23,6 @@ const mooiBoyTheme = {
             stroke: "none",
          },
          ticks: {
-            // kleine streepjes op de axis!
             fill: "transparent",
             size: 5,
             stroke: "#90A4AE",
@@ -35,7 +34,7 @@ const mooiBoyTheme = {
             fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
             fontSize: 10,
             letterSpacing: "normal",
-            padding: 8,
+            padding: 25,
             fill: "#455A64",
             stroke: "transparent",
             strokeWidth: 0,
@@ -225,162 +224,3 @@ const mooiBoyTheme = {
 };
 
 export default mooiBoyTheme;
-
-// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-// Deleted theme objects (keep temporarily in case needed):
-
-/* area: {
-       style: {
-          data: {
-             fill: "#212121",
-          },
-          labels: {
-             fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-             fontSize: 12,
-             letterSpacing: "normal",
-             padding: 8,
-             fill: "#455A64",
-             stroke: "transparent",
-             strokeWidth: 0,
-          },
-       },
-       width: 350,
-       height: 600,
-       padding: 50,
-    }, */
-
-// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-
-/* boxplot: {
-       style: {
-          max: {
-             padding: 8,
-             stroke: "#455A64",
-             strokeWidth: 1,
-          },
-          maxLabels: {
-             fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-             fontSize: 12,
-             letterSpacing: "normal",
-             padding: 8,
-             fill: "#455A64",
-             stroke: "transparent",
-             strokeWidth: 0,
-          },
-          median: {
-             padding: 8,
-             stroke: "#455A64",
-             strokeWidth: 1,
-          },
-          medianLabels: {
-             fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-             fontSize: 12,
-             letterSpacing: "normal",
-             padding: 8,
-             fill: "#455A64",
-             stroke: "transparent",
-             strokeWidth: 0,
-          },
-          min: {
-             padding: 8,
-             stroke: "#455A64",
-             strokeWidth: 1,
-          },
-          minLabels: {
-             fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-             fontSize: 12,
-             letterSpacing: "normal",
-             padding: 8,
-             fill: "#455A64",
-             stroke: "transparent",
-             strokeWidth: 0,
-          },
-          q1: {
-             padding: 8,
-             fill: "#455A64",
-          },
-          q1Labels: {
-             fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-             fontSize: 12,
-             letterSpacing: "normal",
-             padding: 8,
-             fill: "#455A64",
-             stroke: "transparent",
-             strokeWidth: 0,
-          },
-          q3: {
-             padding: 8,
-             fill: "#455A64",
-          },
-          q3Labels: {
-             fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-             fontSize: 12,
-             letterSpacing: "normal",
-             padding: 8,
-             fill: "#455A64",
-             stroke: "transparent",
-             strokeWidth: 0,
-          },
-       },
-       boxWidth: 20,
-       width: 350,
-       height: 350,
-       padding: 50,
-    }, */
-
-// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-
-/*  candlestick: {
-       style: {
-          data: {
-             stroke: "#455A64",
-          },
-          labels: {
-             fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-             fontSize: 12,
-             letterSpacing: "normal",
-             padding: 8,
-             fill: "#455A64",
-             stroke: "transparent",
-             strokeWidth: 0,
-          },
-       },
-       candleColors: {
-          positive: "#ffffff",
-          negative: "#455A64",
-       },
-       width: 350,
-       height: 350,
-       padding: 50,
-    }, */
-
-// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-
-/*    voronoi: {
-       style: {
-          data: {
-             fill: "transparent",
-             stroke: "transparent",
-             strokeWidth: 0,
-          },
-          labels: {
-             fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-             fontSize: 12,
-             letterSpacing: "normal",
-             padding: 5,
-             fill: "#455A64",
-             stroke: "transparent",
-             strokeWidth: 0,
-             pointerEvents: "none",
-          },
-          flyout: {
-             stroke: "#212121",
-             strokeWidth: 1,
-             fill: "#f0f0f0",
-             pointerEvents: "none",
-          },
-       },
-       width: 350,
-       height: 350,
-       padding: 50,
-    }, */

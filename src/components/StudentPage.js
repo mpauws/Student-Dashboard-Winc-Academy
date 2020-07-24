@@ -2,14 +2,7 @@ import React from "react";
 import Chart from "./Chart";
 import StudentGridContainer from "./StudentGridContainer";
 
-function StudentPage({
-   // studentEvaluationData,
-   student,
-   getEnjoymentRatings,
-   getAssignments,
-   getDifficultyRatings,
-   getStudentList,
-}) {
+function StudentPage({ student, getEnjoymentRatings, getAssignments, getDifficultyRatings, getStudentList }) {
    const assignmentStudentRatingWithLabels = getAssignments.map((assignment) => ({
       assignment: assignment,
       difficultyRating: getDifficultyRatings(student, assignment),
@@ -25,9 +18,8 @@ function StudentPage({
          <p className="page-description"></p>
          <br />
          <h3>Ratings</h3>
-
          <Chart ratingChartData={assignmentStudentRatingWithLabels} />
-         <h3>Ga naar andere student</h3>
+         <h3>Display other student</h3>
          <StudentGridContainer getStudentList={getStudentList} />
       </div>
    );

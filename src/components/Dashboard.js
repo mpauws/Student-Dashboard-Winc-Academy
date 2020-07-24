@@ -4,9 +4,6 @@ import "../App.css";
 import Chart from "./Chart";
 
 function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
-   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-   // Get average difficultyRating for assignment X
-   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    const getAverageDifficultyRating = (assignment) => {
       const getTotalDifficultyRating = studentEvaluationData
          .filter((item) => {
@@ -19,9 +16,6 @@ function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
       return getTotalDifficultyRating / getStudentList.length;
    };
 
-   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-   // Get average enjoymentRating for assignment X
-   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    const getAverageEnjoymentRating = (assignment) => {
       const getTotalEnjoymentRating = studentEvaluationData
          .filter((item) => {
@@ -33,10 +27,6 @@ function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
          }, 0);
       return getTotalEnjoymentRating / getStudentList.length;
    };
-
-   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-   // Get array of all distinct assignments with related average difficultyRating, enjoymentRating and label
-   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 
    const assignmentRatingAverageWithLabels = getAssignments.map((item) => ({
       assignment: item,
@@ -52,10 +42,13 @@ function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
    return (
       <div className="component-container">
          <h2>Dashboard</h2>
+
          <p className="page-description">
             Welcome to the dashboard section. The graph below displays the average ratings of all Winc students. Head
             over the student overview for the individual difficulty and enjoyment ratings given by the students.
          </p>
+         <br />
+
          <Chart ratingChartData={assignmentRatingAverageWithLabels} />
       </div>
    );
