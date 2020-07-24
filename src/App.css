@@ -141,7 +141,12 @@ footer {
 }
 
 .bar-chart,
-.line-chart,
+.line-chart {
+   background-color: white;
+   margin: 0 30px 0 30px;
+   margin-bottom: 100px;
+}
+
 .student-grid-container {
    margin-bottom: 100px;
 }
