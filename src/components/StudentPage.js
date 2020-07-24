@@ -2,7 +2,31 @@ import React from "react";
 import Chart from "./Chart";
 import StudentGridContainer from "./StudentGridContainer";
 
-function StudentPage({ student, getEnjoymentRatings, getDifficultyRatings, getStudentList }) {
+function StudentPage({
+   studentEvaluationData,
+   student,
+   getEnjoymentRatings,
+   getAssignments,
+   getDifficultyRatings,
+   getStudentList,
+}) {
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+   // Get array of all distinct assignments of student X with related average difficultyRating, enjoymentRating and label
+   // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+   const assignmentStudentRatingWithLabels = getAssignments.map((assignment) => ({
+      assignment: assignment,
+      difficultyRating: getDifficultyRatings(student, assignment),
+      enjoymentRating: getEnjoymentRatings(student, assignment),
+      /* label: `Difficulty Rating: ${getDifficultyRatings(student, item).toFixed(
+         1
+      )} \n Enjoyment Rating: ${getEnjoymentRatings(student, item).toFixed(1)}`, */
+   }));
+
+   console.log("assignmentStudentRatingWithLabels: ", assignmentStudentRatingWithLabels);
+
+   // let displayArray =
+
    return (
       <div>
          <h2>{student}</h2>
@@ -13,11 +37,7 @@ function StudentPage({ student, getEnjoymentRatings, getDifficultyRatings, getSt
          <br />
          <h3>GrafiekEnjoyment en Difficulty Gradings</h3>
 
-         {/* <Chart
-            student={student}
-            getEnjoymentRatings={getEnjoymentRatings}
-            getDifficultyRatings={getDifficultyRatings}
-         /> */}
+         {/* <Chart assignmentStudentRatingWithLabels={assignmentStudentRatingWithLabels} /> */}
          <h3>Ga naar andere student</h3>
          <StudentGridContainer getStudentList={getStudentList} />
       </div>

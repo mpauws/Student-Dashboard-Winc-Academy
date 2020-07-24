@@ -14,6 +14,7 @@ import {
 import mooiBoyTheme from "../assets/victory-mooiboy-theme";
 
 function Chart({ assignmentRatingAverageWithLabels }) {
+   
    return (
       <div className="chart-graphic">
          <VictoryChart domainPadding={15} theme={mooiBoyTheme} containerComponent={<VictoryZoomContainer />}>

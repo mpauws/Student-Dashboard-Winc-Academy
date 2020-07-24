@@ -64,10 +64,7 @@ function App() {
          .map((assignment) => assignment.enjoymentRating);
    };
 
-   /*    console.log(
-      "Enjoyment Rating van Piet Paulusma voor W1D2-1 (DRY): ",
-      getEnjoymentRatings("Piet Paulusma", "W1D2-1")
-   ); */
+   console.log(getEnjoymentRatings("Piet Paulusma", "W1D2-3"));
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // DRY function for accessing difficulty rating for student x
@@ -83,11 +80,6 @@ function App() {
          })
          .map((assignment) => assignment.difficultyRating);
    };
-
-   /*    console.log(
-      "Difficulty Rating van Piet Paulusma voor W1D2-1 (DRY): ",
-      getDifficultyRatings("Piet Paulusma", "W1D2-1")
-   ); */
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Return
@@ -112,9 +104,11 @@ function App() {
                        <Route exact path={`/${student.replace(/\s/g, "-")}`} key={student}>
                           <StudentPage
                              getStudentList={getStudentList}
+                             getAssignments={getAssignments}
                              student={student}
                              getEnjoymentRatings={getEnjoymentRatings}
                              getDifficultyRatings={getDifficultyRatings}
+                             studentEvaluationData={studentEvaluationData}
                           />
                        </Route>
                     ))
