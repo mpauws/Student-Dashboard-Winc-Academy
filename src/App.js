@@ -64,22 +64,25 @@ function App() {
          .map((assignment) => assignment.enjoymentRating);
    };
 
-   console.log(getEnjoymentRatings("Piet Paulusma", "W1D2-3"));
+   //   console.log(getEnjoymentRatings("Piet Paulusma", "W1D2-3"));
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // DRY function for accessing difficulty rating for student x
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 
    const getDifficultyRatings = (student, assignment) => {
-      return studentEvaluationData
+      const selectedRating = studentEvaluationData
          .filter((item) => {
             return item.student === student;
          })
          .filter((student) => {
             return student.assignment === assignment;
-         })
-         .map((assignment) => assignment.difficultyRating);
+         });
+
+      return selectedRating[0].difficultyRating;
    };
+
+   console.log(getDifficultyRatings("Piet Paulusma", "W3D2-1"));
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Return

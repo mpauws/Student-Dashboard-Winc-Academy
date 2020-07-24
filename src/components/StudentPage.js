@@ -1,5 +1,5 @@
 import React from "react";
-import Chart from "./Chart";
+// import Chart from "./Chart";
 import StudentGridContainer from "./StudentGridContainer";
 
 function StudentPage({
@@ -18,14 +18,13 @@ function StudentPage({
       assignment: assignment,
       difficultyRating: getDifficultyRatings(student, assignment),
       enjoymentRating: getEnjoymentRatings(student, assignment),
+
       /* label: `Difficulty Rating: ${getDifficultyRatings(student, item).toFixed(
          1
       )} \n Enjoyment Rating: ${getEnjoymentRatings(student, item).toFixed(1)}`, */
    }));
 
    console.log("assignmentStudentRatingWithLabels: ", assignmentStudentRatingWithLabels);
-
-   // let displayArray =
 
    return (
       <div>
