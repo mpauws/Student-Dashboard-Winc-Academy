@@ -34,13 +34,16 @@ a {
    padding-left: 0;
 }
 
+button {
+   outline: none;
+}
+
 footer {
    display: flex;
    /* justify-content: space-around; */
    padding-left: 20px;
    align-items: center;
-   position: absolute;
-   bottom: 0;
+
    width: 100%;
    height: 10vh;
    background-color: #3c7bdb;
@@ -64,7 +67,6 @@ h5 {
 
 .app-container {
    text-align: center;
-   min-height: 100vh;
 }
 
 .component-container {
@@ -90,9 +92,13 @@ h5 {
    max-width: 700px;
    display: grid;
    justify-items: center;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-   grid-template-rows: 1fr 1fr;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: repeat(3, 1fr);
    gap: 1px 1px;
+   /*    grid-template-areas:
+      ". t t t"
+      "t t t t"
+      "t t t ."; */
 }
 
 .student-tile p {
@@ -100,6 +106,7 @@ h5 {
 }
 
 .student-tile {
+   /* grid-area: t; */
    font-size: 0.8em;
    display: flex;
    justify-content: center;
@@ -115,6 +122,10 @@ h5 {
    transition-duration: 300ms;
    transition-property: all;
    transition-timing-function: ease;
+}
+
+.student-titel:active {
+   background-color: rgb(61, 128, 129);
 }
 
 .student-tile:hover {
