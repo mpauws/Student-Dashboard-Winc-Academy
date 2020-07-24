@@ -1,4 +1,5 @@
 import React from "react";
+// import * as V from "victory";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -8,7 +9,6 @@ import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
 import StudentPage from "./components/StudentPage";
 
-// Import raw student evaluation data
 import studentEvaluationData from "./data/student-evaluation-data";
 
 import "./App.css";
@@ -64,10 +64,10 @@ function App() {
          .map((assignment) => assignment.enjoymentRating);
    };
 
-   console.log(
+   /*    console.log(
       "Enjoyment Rating van Piet Paulusma voor W1D2-1 (DRY): ",
       getEnjoymentRatings("Piet Paulusma", "W1D2-1")
-   );
+   ); */
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // DRY function for accessing difficulty rating for student x
@@ -84,10 +84,10 @@ function App() {
          .map((assignment) => assignment.difficultyRating);
    };
 
-   console.log(
+   /*    console.log(
       "Difficulty Rating van Piet Paulusma voor W1D2-1 (DRY): ",
       getDifficultyRatings("Piet Paulusma", "W1D2-1")
-   );
+   ); */
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Return
@@ -98,7 +98,11 @@ function App() {
             <NavBar />
             <Switch>
                <Route path="/" exact>
-                  <Dashboard getStudentList={getStudentList} getAssignments={getAssignments} />
+                  <Dashboard
+                     getStudentList={getStudentList}
+                     getAssignments={getAssignments}
+                     studentEvaluationData={studentEvaluationData}
+                  />
                </Route>
                <Route path="/studentoverview">
                   <StudentOverview getStudentList={getStudentList} getAssignments={getAssignments} />
