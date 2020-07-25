@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 
 import Chart from "./Chart";
+import WidgetContainer from "./WidgetContainer";
 
 function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
    const getAverageDifficultyRating = (assignment) => {
@@ -37,8 +38,6 @@ function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
       )} \n Enjoyment Rating: ${getAverageEnjoymentRating(item).toFixed(1)}`,
    }));
 
-   console.log("assignmentRatingAverageWithLabels: ", assignmentRatingAverageWithLabels);
-
    return (
       <div className="component-container">
          <h2>Dashboard</h2>
@@ -48,7 +47,8 @@ function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
             over the student overview for the individual difficulty and enjoyment ratings given by the students.
          </p>
          <br />
-
+         <WidgetContainer />
+         <br />
          <Chart ratingChartData={assignmentRatingAverageWithLabels} />
       </div>
    );
