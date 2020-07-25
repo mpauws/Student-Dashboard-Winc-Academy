@@ -47,7 +47,7 @@ function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
             over the student overview for the individual difficulty and enjoyment ratings given by the students.
          </p>
          <br />
-         <WidgetContainer />
+         <WidgetContainer studentEvaluationData={studentEvaluationData}/>
          <br />
          <Chart ratingChartData={assignmentRatingAverageWithLabels} />
       </div>
