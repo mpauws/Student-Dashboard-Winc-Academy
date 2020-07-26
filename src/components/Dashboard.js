@@ -38,6 +38,9 @@ function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
       )} \n Enjoyment Rating: ${getAverageEnjoymentRating(item).toFixed(1)}`,
    }));
 
+   // [[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]
+   // Counter: https://www.youtube.com/watch?v=rhZgquCAcGc
+
    return (
       <div className="component-container">
          <h2>Dashboard</h2>
@@ -47,7 +50,7 @@ function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
             over the student overview for the individual difficulty and enjoyment ratings given by the students.
          </p>
          <br />
-         <WidgetContainer studentEvaluationData={studentEvaluationData}/>
+         <WidgetContainer studentEvaluationData={studentEvaluationData} />
          <br />
          <Chart ratingChartData={assignmentRatingAverageWithLabels} />
       </div>

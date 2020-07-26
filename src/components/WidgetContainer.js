@@ -4,7 +4,7 @@ import Widget from "./widgets/Widget";
 function WidgetContainer({ studentEvaluationData }) {
    // [[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]
 
-/*    function largestOfFour(mainArray) {
+   /*    function largestOfFour(mainArray) {
       return mainArray.map(function (subArray) {
          return subArray.reduce(function (previousLargestNumber, currentLargestNumber) {
             return currentLargestNumber > previousLargestNumber ? currentLargestNumber : previousLargestNumber;
@@ -22,7 +22,7 @@ function WidgetContainer({ studentEvaluationData }) {
  */
    // [[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]
 
-/*    const exampleArray = [1, 2, 3, 4];
+   /*    const exampleArray = [1, 2, 3, 4];
 
    const getLargestNumberFromArray = (arr) => {
       return arr.reduce(function (previousLargestNumber, currentLargestNumber) {
@@ -42,9 +42,17 @@ function WidgetContainer({ studentEvaluationData }) {
       { id: 5, name: "Fure of Dracula", available: true, votes: 2 },
    ];
 
-   let maxGame = games.reduce((max, game) => (max.votes > game.votes ? max : game));
+   let maxGame = games.reduce((max, game) => (max.votes > game.votes ? max : game), 0);
 
    console.log(maxGame);
+
+   // [[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]
+
+   let mostDifficultAssignmentForStudent = studentEvaluationData.reduce((max, item) =>
+      max.difficultyRating > item.difficultyRating ? max : item
+   );
+
+   console.log(mostDifficultAssignmentForStudent);
 
    // [[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]
 
@@ -60,6 +68,15 @@ function WidgetContainer({ studentEvaluationData }) {
    const mostFunAssignment = "W2D1-3";
    // To do: build function to display assignment with highest enjoyment grading
    const leastFunAssignment = "W2D1-4";
+   // To do: build function to display assignment with lowest enjoyment grading
+
+   const gradeEasiestAssignment = "1.2";
+   // To do: build function to display assignment with lowest difficulty grading
+   const gradeHardestAssignment = "4.8";
+   // To do: build function to display assignment with highest difficulty grading
+   const gradeMostFunAssignment = "4.5";
+   // To do: build function to display assignment with highest enjoyment grading
+   const gradeLeastFunAssignment = "2.4";
    // To do: build function to display assignment with lowest enjoyment grading
 
    return (
