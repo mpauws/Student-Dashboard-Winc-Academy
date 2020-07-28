@@ -177,3 +177,7 @@ footer {
    font-size: 25px;
    font-weight: 600;
 }
+
+.chart-legend rect tspan {
+   font-size: 11px;
+}

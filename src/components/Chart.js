@@ -7,6 +7,7 @@ import {
    VictoryGroup,
    VictoryTooltip,
    VictoryZoomContainer,
+   VictoryLegend,
 } from "victory";
 
 import mooiBoyTheme from "../assets/victory-mooiboy-theme";
@@ -42,6 +43,21 @@ function Chart({ ratingChartData }) {
                />
                <VictoryAxis dependentAxis />
             </VictoryChart>
+            <div className="chart-legend">
+               <VictoryLegend
+                  x={125}
+                  y={10}
+                  title="Legend"
+                  centerTitle
+                  orientation="horizontal"
+                  gutter={20}
+                  style={{ border: { stroke: "black" }, title: { fontSize: 20 } }}
+                  data={[
+                     { name: "Difficulty", symbol: { fill: "#6ca8a2" } },
+                     { name: "Enjoyment", symbol: { fill: "#d69442" } },
+                  ]}
+               />
+            </div>
          </div>
          <h6>Line Chart Display</h6>
          <div className="line-chart">
