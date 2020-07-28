@@ -17,7 +17,7 @@ function Chart({ ratingChartData }) {
       <div className="chart-graphic">
          <h6>Bar Chart Display</h6>
          <div className="bar-chart">
-            <VictoryChart domainPadding={15} theme={mooiBoyTheme} containerComponent={<VictoryZoomContainer />}>
+            <VictoryChart domainPadding={10} theme={mooiBoyTheme} containerComponent={<VictoryZoomContainer />}>
                <VictoryGroup offset={20}>
                   <VictoryBar
                      labelComponent={<VictoryTooltip />}
@@ -45,15 +45,15 @@ function Chart({ ratingChartData }) {
             </VictoryChart>
             <div className="chart-legend">
                <VictoryLegend
-                  x={125}
+                  x={165}
                   y={10}
-                  title="Legend"
+                  height={25}
                   centerTitle
                   orientation="horizontal"
                   gutter={20}
-                  style={{ border: { stroke: "black" }, title: { fontSize: 20 } }}
+                  style={{ title: { fontSize: 11 }, labels: { fontSize: 9, fontWeight: 100 } }}
                   data={[
-                     { name: "Difficulty", symbol: { fill: "#6ca8a2" } },
+                     { name: "Difficulty", symbol: { fill: "#6ca8a2" }, fontSize: { fontSize: 8 } },
                      { name: "Enjoyment", symbol: { fill: "#d69442" } },
                   ]}
                />
@@ -88,7 +88,37 @@ function Chart({ ratingChartData }) {
                   tickFormat={ratingChartData.map((averages) => averages.assignment)}
                />
                <VictoryAxis dependentAxis />
+               <div className="chart-legend">
+                  <VictoryLegend
+                     x={165}
+                     y={10}
+                     height={25}
+                     centerTitle
+                     orientation="horizontal"
+                     gutter={20}
+                     style={{ title: { fontSize: 11 }, labels: { fontSize: 9, fontWeight: 100 } }}
+                     data={[
+                        { name: "Difficulty", symbol: { fill: "#6ca8a2" }, fontSize: { fontSize: 8 } },
+                        { name: "Enjoyment", symbol: { fill: "#d69442" } },
+                     ]}
+                  />
+               </div>
             </VictoryChart>
+            <div className="chart-legend">
+               <VictoryLegend
+                  x={165}
+                  y={10}
+                  height={25}
+                  centerTitle
+                  orientation="horizontal"
+                  gutter={20}
+                  style={{ title: { fontSize: 11 }, labels: { fontSize: 9, fontWeight: 100 } }}
+                  data={[
+                     { name: "Difficulty", symbol: { fill: "#6ca8a2" }, fontSize: { fontSize: 8 } },
+                     { name: "Enjoyment", symbol: { fill: "#d69442" } },
+                  ]}
+               />
+            </div>
          </div>
       </div>
    );
