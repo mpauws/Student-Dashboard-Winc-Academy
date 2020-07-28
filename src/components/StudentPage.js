@@ -2,14 +2,14 @@ import React from "react";
 import Chart from "./Chart";
 import StudentGridContainer from "./StudentGridContainer";
 
-function StudentPage({ student, getEnjoymentRatings, getAssignments, getDifficultyRatings, getStudentList }) {
+function StudentPage({ student, getRating, getAssignments, getStudentList }) {
    const assignmentStudentRatingWithLabels = getAssignments.map((assignment) => ({
       assignment: assignment,
-      difficultyRating: getDifficultyRatings(student, assignment),
-      enjoymentRating: getEnjoymentRatings(student, assignment),
-      label: `Difficulty Rating: ${getDifficultyRatings(student, assignment).toFixed(
+      difficultyRating: getRating(student, assignment, "difficulty"),
+      enjoymentRating: getRating(student, assignment, "enjoyment"),
+      label: `Difficulty Rating: ${getRating(student, assignment, "difficulty").toFixed(
          1
-      )} \n Enjoyment Rating: ${getEnjoymentRatings(student, assignment).toFixed(1)}`,
+      )} \n Enjoyment Rating: ${getRating(student, assignment, "enjoyment").toFixed(1)}`,
    }));
 
    return (

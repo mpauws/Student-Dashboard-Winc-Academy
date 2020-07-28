@@ -37,7 +37,7 @@ function App() {
       }
    );
 
-   const getEnjoymentRatings = (student, assignment) => {
+   const getRating = (student, assignment, ratingSort) => {
       const selectedRating = studentEvaluationData
          .filter((item) => {
             return item.student === student;
@@ -46,19 +46,12 @@ function App() {
             return student.assignment === assignment;
          });
 
-      return selectedRating[0].enjoymentRating;
-   };
-
-   const getDifficultyRatings = (student, assignment) => {
-      const selectedRating = studentEvaluationData
-         .filter((item) => {
-            return item.student === student;
-         })
-         .filter((student) => {
-            return student.assignment === assignment;
-         });
-
-      return selectedRating[0].difficultyRating;
+      if (ratingSort === "enjoyment") {
+         return selectedRating[0].enjoymentRating;
+      }
+      if (ratingSort === "difficulty") {
+         return selectedRating[0].difficultyRating;
+      }
    };
 
    return (
@@ -83,8 +76,7 @@ function App() {
                              getStudentList={getStudentList}
                              getAssignments={getAssignments}
                              student={student}
-                             getEnjoymentRatings={getEnjoymentRatings}
-                             getDifficultyRatings={getDifficultyRatings}
+                             getRating={getRating}
                           />
                        </Route>
                     ))
