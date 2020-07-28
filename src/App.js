@@ -13,16 +13,7 @@ import studentEvaluationData from "./data/student-evaluation-data";
 import "./App.css";
 
 function App() {
-   const getStudentList = [...new Set(studentEvaluationData.map((x) => x.student))].sort((student1, student2) => {
-      if (student1 > student2) {
-         return 1;
-      } else if (student1 === student2) {
-         return 0;
-      } else if (student1 < student2) {
-         return -1;
-      }
-      return 0;
-   });
+   const getStudentList = [...new Set(studentEvaluationData.map((x) => x.student))];
 
    const getAssignments = [...new Set(studentEvaluationData.map((x) => x.assignment))].sort(
       (assignment1, assignment2) => {

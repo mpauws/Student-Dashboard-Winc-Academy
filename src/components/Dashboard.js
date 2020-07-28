@@ -5,37 +5,25 @@ import Chart from "./Chart";
 import WidgetContainer from "./WidgetContainer";
 
 function Dashboard({ getStudentList, getAssignments, studentEvaluationData }) {
-   const getAverageDifficultyRating = (assignment) => {
+   const getAverageRating = (assignment, ratingSort) => {
       const getTotalDifficultyRating = studentEvaluationData
          .filter((item) => {
             return item.assignment === assignment;
          })
-         .map((item) => item.difficultyRating)
+         .map((item) => (ratingSort === "enjoyment" ? item.enjoymentRating : item.difficultyRating))
          .reduce((currentTotal, grading) => {
             return grading + currentTotal;
          }, 0);
       return getTotalDifficultyRating / getStudentList.length;
    };
 
-   const getAverageEnjoymentRating = (assignment) => {
-      const getTotalEnjoymentRating = studentEvaluationData
-         .filter((item) => {
-            return item.assignment === assignment;
-         })
-         .map((item) => item.enjoymentRating)
-         .reduce((currentTotal, grading) => {
-            return grading + currentTotal;
-         }, 0);
-      return getTotalEnjoymentRating / getStudentList.length;
-   };
-
    const assignmentRatingAverageWithLabels = getAssignments.map((item) => ({
       assignment: item,
-      difficultyRating: getAverageDifficultyRating(item),
-      enjoymentRating: getAverageEnjoymentRating(item),
-      label: `Difficulty Rating: ${getAverageDifficultyRating(item).toFixed(
+      difficultyRating: getAverageRating(item, "difficulty"),
+      enjoymentRating: getAverageRating(item, "enjoyment"),
+      label: `Difficulty Rating: ${getAverageRating(item, "difficulty").toFixed(
          1
-      )} \n Enjoyment Rating: ${getAverageEnjoymentRating(item).toFixed(1)}`,
+      )} \n Enjoyment Rating: ${getAverageRating(item, "enjoyment").toFixed(1)}`,
    }));
 
    // [[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]
