@@ -74,7 +74,7 @@ function App() {
                   />
                </Route>
                <Route path="/studentoverview">
-                  <StudentOverview getStudentList={getStudentList} getAssignments={getAssignments} />
+                  <StudentOverview getStudentList={getStudentList} />
                </Route>
                {getStudentList
                   ? getStudentList.map((student) => (
@@ -85,7 +85,6 @@ function App() {
                              student={student}
                              getEnjoymentRatings={getEnjoymentRatings}
                              getDifficultyRatings={getDifficultyRatings}
-                             studentEvaluationData={studentEvaluationData}
                           />
                        </Route>
                     ))
