@@ -127,6 +127,7 @@ const mooiBoyTheme = {
             stroke: "transparent",
             strokeWidth: 0,
          },
+         
       },
    },
    line: {
@@ -147,56 +148,6 @@ const mooiBoyTheme = {
             strokeWidth: 0,
          },
       },
-      width: 350,
-      height: 350,
-      padding: 50,
-   },
-   pie: {
-      colorScale: ["#F4511E", "#FFF59D", "#DCE775", "#8BC34A", "#00796B", "#006064"],
-      style: {
-         data: {
-            padding: 8,
-            stroke: "#ECEFF1",
-            strokeWidth: 1,
-         },
-         labels: {
-            fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-            fontSize: 12,
-            letterSpacing: "normal",
-            padding: 20,
-            fill: "#455A64",
-            stroke: "transparent",
-            strokeWidth: 0,
-         },
-      },
-      width: 350,
-      height: 350,
-      padding: 50,
-   },
-   scatter: {
-      style: {
-         data: {
-            fill: "#455A64",
-            opacity: 1,
-            stroke: "transparent",
-            strokeWidth: 0,
-         },
-         labels: {
-            fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-            fontSize: 12,
-            letterSpacing: "normal",
-            padding: 8,
-            fill: "#455A64",
-            stroke: "transparent",
-            strokeWidth: 0,
-         },
-      },
-      width: 350,
-      height: 350,
-      padding: 50,
-   },
-   stack: {
-      colorScale: ["#F4511E", "#FFF59D", "#DCE775", "#8BC34A", "#00796B", "#006064"],
       width: 350,
       height: 350,
       padding: 50,
