@@ -18,7 +18,7 @@ function Chart({ ratingChartData }) {
          <h6>Bar Chart Display</h6>
          <div className="bar-chart">
             <VictoryChart domainPadding={10} theme={mooiBoyTheme} containerComponent={<VictoryZoomContainer />}>
-               <VictoryGroup offset={20}>
+               <VictoryGroup offset={15}>
                   <VictoryBar
                      labelComponent={<VictoryTooltip />}
                      data={ratingChartData}

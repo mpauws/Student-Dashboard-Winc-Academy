@@ -6,7 +6,7 @@ nav {
    height: 15vh;
    background-color: rgb(60, 123, 219);
    color: rgb(255, 255, 255);
-   font-size: 12px;
+   font-size: 14px;
    font-weight: 200;
 }
 
@@ -40,7 +40,7 @@ button {
 
 h2 {
    font-weight: 600;
-   margin-top: 30px;
+   margin-top: 40px;
 }
 
 h4 {
@@ -174,8 +174,30 @@ footer {
 }
 
 .display-statistic {
-   font-size: 25px;
+   display: flex;
+   justify-content: center;
+   font-size: 15px;
    font-weight: 600;
+}
+
+.widget-icon {
+   width: 40px;
+   margin: 0 auto;
+   padding-bottom: 15px;
+}
+
+.display-statistic-assignment-red {
+   color: #990f0f;
+   padding: 0 3px;
+}
+
+.display-statistic-assignment-green {
+   color: #408840;
+   padding: 0 3px;
+}
+
+.display-statistic-rating {
+   padding: 0 3px;
 }
 
 .chart-legend rect tspan {

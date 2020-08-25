@@ -1,6 +1,11 @@
 import React from "react";
 import Widget from "./widgets/Widget";
 
+import hardestIcon from "../assets/hardest-icon.png";
+import easiestIcon from "../assets/easiest-icon.png";
+import mostFunIcon from "../assets/most-fun-icon.png";
+import leastFunIcon from "../assets/least-fun-icon.png";
+
 function WidgetContainer({ assignmentRatingAverageWithLabels }) {
    const hardestAssignment = () => {
       let max = 0;
@@ -8,7 +13,13 @@ function WidgetContainer({ assignmentRatingAverageWithLabels }) {
       assignmentRatingAverageWithLabels.forEach((object) => {
          if (object.difficultyRating > max) {
             max = object.difficultyRating;
-            newObject = { title: "Hardest Assignment", assignment: object.assignment, rating: max };
+            newObject = {
+               title: "Hardest Assignment",
+               assignment: object.assignment,
+               rating: max.toFixed(1),
+               textcolor: "red",
+               icon: hardestIcon,
+            };
          }
       });
       return newObject;
@@ -20,7 +31,13 @@ function WidgetContainer({ assignmentRatingAverageWithLabels }) {
       assignmentRatingAverageWithLabels.forEach((object) => {
          if (object.difficultyRating < min) {
             min = object.difficultyRating;
-            newObject = { title: "Easiest Assignment", assignment: object.assignment, rating: min };
+            newObject = {
+               title: "Easiest Assignment",
+               assignment: object.assignment,
+               rating: min.toFixed(1),
+               textcolor: "green",
+               icon: easiestIcon,
+            };
          }
       });
       return newObject;
@@ -32,7 +49,13 @@ function WidgetContainer({ assignmentRatingAverageWithLabels }) {
       assignmentRatingAverageWithLabels.forEach((object) => {
          if (object.enjoymentRating > max) {
             max = object.enjoymentRating;
-            newObject = { title: "Most Fun Assignment", assignment: object.assignment, rating: max };
+            newObject = {
+               title: "Most Fun Assignment",
+               assignment: object.assignment,
+               rating: max.toFixed(1),
+               textcolor: "green",
+               icon: mostFunIcon,
+            };
          }
       });
       return newObject;
@@ -44,7 +67,13 @@ function WidgetContainer({ assignmentRatingAverageWithLabels }) {
       assignmentRatingAverageWithLabels.forEach((object) => {
          if (object.enjoymentRating < min) {
             min = object.enjoymentRating;
-            newObject = { title: "Least Fun Assignment", assignment: object.assignment, rating: min };
+            newObject = {
+               title: "Least Fun Assignment",
+               assignment: object.assignment,
+               rating: min.toFixed(1),
+               textcolor: "red",
+               icon: leastFunIcon,
+            };
          }
       });
       return newObject;
