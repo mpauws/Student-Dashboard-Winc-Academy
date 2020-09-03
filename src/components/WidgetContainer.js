@@ -25,24 +25,6 @@ function WidgetContainer({ assignmentRatingAverageWithLabels }) {
       return newObject;
    };
 
-   const easiestAssignment = () => {
-      let min = 5;
-      let newObject = {};
-      assignmentRatingAverageWithLabels.forEach((object) => {
-         if (object.difficultyRating < min) {
-            min = object.difficultyRating;
-            newObject = {
-               title: "Easiest Assignment",
-               assignment: object.assignment,
-               rating: min.toFixed(1),
-               textcolor: "green",
-               icon: easiestIcon,
-            };
-         }
-      });
-      return newObject;
-   };
-
    const mostFunAssignment = () => {
       let max = 0;
       let newObject = {};
@@ -55,6 +37,24 @@ function WidgetContainer({ assignmentRatingAverageWithLabels }) {
                rating: max.toFixed(1),
                textcolor: "green",
                icon: mostFunIcon,
+            };
+         }
+      });
+      return newObject;
+   };
+
+   const easiestAssignment = () => {
+      let min = 5;
+      let newObject = {};
+      assignmentRatingAverageWithLabels.forEach((object) => {
+         if (object.difficultyRating < min) {
+            min = object.difficultyRating;
+            newObject = {
+               title: "Easiest Assignment",
+               assignment: object.assignment,
+               rating: min.toFixed(1),
+               textcolor: "green",
+               icon: easiestIcon,
             };
          }
       });

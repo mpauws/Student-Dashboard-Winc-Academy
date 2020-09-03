@@ -14,19 +14,7 @@ import "./App.css";
 
 function App() {
    const getStudentList = [...new Set(studentEvaluationData.map((x) => x.student))];
-
-   const getAssignments = [...new Set(studentEvaluationData.map((x) => x.assignment))].sort(
-      (assignment1, assignment2) => {
-         if (assignment1 > assignment2) {
-            return 1;
-         } else if (assignment1 === assignment2) {
-            return 0;
-         } else if (assignment1 < assignment2) {
-            return -1;
-         }
-         return 0;
-      }
-   );
+   const getAssignments = [...new Set(studentEvaluationData.map((x) => x.assignment))];
 
    const getRating = (student, assignment, ratingSort) => {
       const selectedRating = studentEvaluationData

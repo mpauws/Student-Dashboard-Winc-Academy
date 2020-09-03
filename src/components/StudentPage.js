@@ -12,10 +12,16 @@ function StudentPage({ student, getRating, getAssignments, getStudentList }) {
       )} \n Enjoyment Rating: ${getRating(student, assignment, "enjoyment").toFixed(1)}`,
    }));
 
+   /*    const getImgURL = `./profile-photos/${student.replace(/\s/g, "-").toLowerCase()}.jpg`;
+   console.log(getImgURL);
+ */
+
    return (
       <div className="component-container">
+         {/*          <img src={getImgURL} alt={student} />
+          */}{" "}
          <h2>{student}</h2>
-         <p className="page-description"></p>
+         <p className="page-description">{student} has submitted the following ratings:</p>
          <br />
          <h3>Ratings</h3>
          <Chart ratingChartData={assignmentStudentRatingWithLabels} />
